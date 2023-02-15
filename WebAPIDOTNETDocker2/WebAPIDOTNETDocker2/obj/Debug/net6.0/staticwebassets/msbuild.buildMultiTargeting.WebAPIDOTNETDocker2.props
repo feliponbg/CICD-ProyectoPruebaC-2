@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\WebAPIDOTNETDocker2.props" />
+</Project>
