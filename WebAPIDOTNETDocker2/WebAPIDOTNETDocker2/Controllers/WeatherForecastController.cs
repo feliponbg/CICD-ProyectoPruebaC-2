@@ -18,8 +18,8 @@ namespace WebAPIDOTNETDocker2.Controllers
             _logger = logger;
         }
 
-        [HttpGet("GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> GetWeatherForecast()
+        [HttpGet("GetWeatherForecast", Name = "GetWeatherForecast")]
+        public IEnumerable<WeatherForecast> Get()
         {
             _logger.LogError("Mandando error de prueba al LOG");
             Response.Headers.Add("X-Header-Personalizado", "Bonjour");
@@ -33,8 +33,8 @@ namespace WebAPIDOTNETDocker2.Controllers
             .ToArray();
         }
 
-        [HttpGet("GetWeatherForecast2")]
-        public async Task<IActionResult> GetWeatherForecast2()
+        [HttpGet("GetWeatherForecast2", Name = "GetWeatherForecast2")]
+        public async Task<IActionResult> Get2()
         {
             _logger.LogError("Mandando error de prueba al LOG");
             Response.Headers.Add("X-Header-Personalizado", "Bonjour 2");
