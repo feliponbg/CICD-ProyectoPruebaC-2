@@ -34,12 +34,12 @@ namespace WebAPIDOTNETDocker2.Controllers
         }
 
         [HttpGet(Name = "GetWeatherForecast2")]
-        public Task<IActionResult> Get()
+        public async Task<IActionResult> Get()
         {
             _logger.LogError("Mandando error de prueba al LOG");
             Response.Headers.Add("X-Header-Personalizado", "Bonjour 2");
 
-            return Ok( { error = false, message = "Très bien!"});
+            return Ok(new { error = false, message = "Très bien!" });
         }
     }
 }
