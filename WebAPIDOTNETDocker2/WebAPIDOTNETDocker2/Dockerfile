@@ -31,7 +31,8 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["WebAPIDOTNETDocker2/WebAPIDOTNETDocker2/WebAPIDOTNETDocker2.csproj", "WebAPIDOTNETDocker2/WebAPIDOTNETDocker2/"]
+COPY . .
+#COPY ["WebAPIDOTNETDocker2/WebAPIDOTNETDocker2/WebAPIDOTNETDocker2.csproj", "WebAPIDOTNETDocker2/WebAPIDOTNETDocker2/"]
 RUN dotnet restore "WebAPIDOTNETDocker2/WebAPIDOTNETDocker2/WebAPIDOTNETDocker2.csproj"
 COPY . .
 WORKDIR "/src/WebAPIDOTNETDocker2/WebAPIDOTNETDocker2"
