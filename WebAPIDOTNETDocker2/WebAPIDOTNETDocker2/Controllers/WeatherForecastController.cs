@@ -39,7 +39,7 @@ namespace WebAPIDOTNETDocker2.Controllers
             _logger.LogError("Mandando error de prueba al LOG");
             Response.Headers.Add("X-Header-Personalizado", "Bonjour 2");
 
-            return Ok( { error = false, message = "Très bien!"})
+            return Ok( { error = false, message = "Très bien!"});
         }
     }
 }
