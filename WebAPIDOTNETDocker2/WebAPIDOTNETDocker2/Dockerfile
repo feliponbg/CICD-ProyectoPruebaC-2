@@ -31,11 +31,11 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY . .
-#COPY ["WebAPIDOTNETDocker2/WebAPIDOTNETDocker2/WebAPIDOTNETDocker2.csproj", "WebAPIDOTNETDocker2/WebAPIDOTNETDocker2/"]
-RUN dotnet restore "WebAPIDOTNETDocker2/WebAPIDOTNETDocker2/WebAPIDOTNETDocker2.csproj"
-COPY . .
-WORKDIR "/src/WebAPIDOTNETDocker2/WebAPIDOTNETDocker2"
+COPY . "WebAPIDOTNETDocker2/"
+# COPY ["WebAPIDOTNETDocker2/WebAPIDOTNETDocker2/WebAPIDOTNETDocker2.csproj", "WebAPIDOTNETDocker2/WebAPIDOTNETDocker2/"]
+RUN dotnet restore "WebAPIDOTNETDocker2/WebAPIDOTNETDocker2.csproj"
+# COPY . .
+WORKDIR "/src/WebAPIDOTNETDocker2"
 RUN dotnet build "WebAPIDOTNETDocker2.csproj" -c Release -o /app/build
 
 FROM build AS publish
